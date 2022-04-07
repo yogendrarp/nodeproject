@@ -21,16 +21,21 @@ router.get("/:id", function (req, res, next) {
   });
 });
 
-router.post("", function (req, res, next) {
-  collection.update(
+router.post("/", function (req, res, next) {
+  console.log("Welcome ")
+  console.log(req.body);
+  collection.insert(
     /* req.body*/ {
       title: req.body.title,
       genre: req.body.genre,
       description: req.body.description,
-      available: req.body.available,
+      available: false
     },
     function (err, video) {
-      if (err) throw err;
+      if (err) {
+        console.log(err);
+        throw err;
+      }
       res.json(video);
     }
   );
