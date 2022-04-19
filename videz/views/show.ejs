@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <img src="/images/<%= video._id%>.jpg" alt="Card image cap" style="width: 400px;height: 400px;">
+    <h3><%= video.title%></h3>
+    <h5><%= video.genre%></h5>
+    <p>
+        <%= video.description%>
+    </p>
+    <a href="/videos"><< Back To Movies</a>
+</div>
+
+<%- include('partials/footer.ejs') %>

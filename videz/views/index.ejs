@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+  </h1>
+
+  <div class="container">
+    <div class="p5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Vidzy Application</h1>
+        <p class="col-md-8 fs-4">Selected list of popular movies</p>
+        <a href="/videos/new" class="btn btn-lg btn-primary" type="button"> Add Video</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="row">
+    <% videos.forEach((video)=>{ %>
+      <div class="card m-2" style="width: 18rem;">
+        <img class="card-img-top" src="images/<%= video._id%>.jpg" alt="Card image cap" style="width: 200px;height: 200px; margin-left: 2.5em;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= video.title%>
+          </h5>
+
+          <h7 class="card-text">
+            <%= video.genre%>
+          </h7>
+          <a href="/videos/<%= video._id%>" class="btn btn-primary">More...</a>
+        </div>
+      </div>
+      <% })%>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
